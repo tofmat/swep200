@@ -32,7 +32,7 @@ export default {
         return{
             name: '',
             email: '',
-            password: ''
+            password: '' 
         }
     },
 
@@ -41,7 +41,12 @@ export default {
             console.log(this.name, this.email, this.password)
             Axios.post('', {
                 name: this.name,
-                email: this.email
+                email: this.email,
+                password: this.password
+            }).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
             })
         }
     }
