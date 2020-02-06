@@ -17,9 +17,9 @@
       <li class="nav-item">
         <router-link to="/upload" class="nav-link">Upload Photo</router-link>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" v-if="$root.auth">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hello Tosin
+          Hello {{$root.auth.name}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -34,3 +34,11 @@
     </nav>
 </template>
 
+
+<script>
+export default {
+   mounted() {
+     console.log(this.$root);
+   }
+}
+</script>

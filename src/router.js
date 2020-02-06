@@ -4,6 +4,7 @@
  import Login from './views/Login.vue'
  import Signup from './views/Signup.vue'
  import Upload from './views/Upload.vue'
+ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -19,6 +20,10 @@ const router = new Router({
     {
         path: '/upload',
         component: Upload
+    },
+    {
+        path: '/home',
+        component: Home
     }]
 })
  

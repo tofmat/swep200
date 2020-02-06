@@ -46,6 +46,9 @@ export default {
             .then(response => {
                 localStorage.setItem('auth', JSON.stringify(response.config.data))
                 this.$root.auth = response.config.data;
+                console.log(response);
+
+                this.$router.push('home');
             })
             .catch(({ response }) => {
                 console.log(response);
