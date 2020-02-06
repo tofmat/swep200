@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import auth from '../services/auth';
 export default {
     data() {
         return{
@@ -38,16 +38,12 @@ export default {
 
     methods: {
         registerUser() {
-            console.log(this.name, this.email, this.password)
-            Axios.post('', {
+            let credentials = {
                 name: this.name,
                 email: this.email,
                 password: this.password
-            }).then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log(error)
-            })
+            }
+            auth.signup(this,credentials, 'gallery')
         }
     }
 
