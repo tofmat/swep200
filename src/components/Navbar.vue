@@ -11,10 +11,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"  v-if="!$root.auth">
         <router-link to="/login" class="nav-link">Login</router-link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" v-if="!$root.auth">
         <router-link to="/upload" class="nav-link">Upload Photo</router-link>
       </li>
       <li class="nav-item dropdown" v-if="$root.auth">
