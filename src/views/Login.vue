@@ -51,9 +51,10 @@ export default {
                 if (response.status === 401){
                     this.errors = {
                         email: ["These credentals do not match our records"]
+                    };
+                    } else {
+                         this.errors = response.data;
                     }
-                }
-                this.errors = response.data;
             });
         }
     }
