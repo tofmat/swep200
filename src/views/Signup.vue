@@ -39,14 +39,15 @@ export default {
     methods: {
         registerUser() {
             console.log(this.name, this.email, this.password)
-            Axios.post('', {
+            Axios.post('http://api-photobox.herokuapp.com/api/auth/signup', {
                 name: this.name,
                 email: this.email,
                 password: this.password
             }).then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log(error)
+                console.log(response) 
+            })
+            .catch(({ response }) => {
+                console.log(response);
             })
         }
     }
