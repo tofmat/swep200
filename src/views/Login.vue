@@ -17,7 +17,10 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                        <button @click="loginUser()" class="btn form-control btn-success">Login</button>
+                        <button @click="loginUser()" :disabled="loading" class="btn form-control btn-success">
+                            <i class="fas fa-spin fa-spinner" v-if="loading"></i>
+                            {{ loading ? '' : 'Login' }}
+                        </button>
                     </div>
                     <p class="text-center">Dont have an account with us? <span><router-link to="/signup"> Sign up now </router-link></span></p>
                     
@@ -25,7 +28,7 @@
             </div>
         </div>
     </div>
-</template>
+</template> 
 
 <script>
 import Axios from 'axios'
@@ -34,20 +37,26 @@ export default {
         return{
             email: '',
             password: '',
-            errors: {}
+            errors: {},
+            loading: false
         }
     },
 
     methods: {
         loginUser() {
+            this.loading = true ;
             Axios.post('http://api-photobox.herokuapp.com/api/auth/login', {
                 email: this.email ,
                 password: this.password
             })
             .then(response => {
-                console.log(response);
+                this.loading = false;
+                this.$root.auth = response.config.data;
+                localStorage.setItem('auth', JSON.stringify(response.config.data))
+                this.$router.push('home');
             })
             .catch(({response}) => {
+                this.loading = false;
                 if (response.status === 401){
                     this.errors = {
                         email: ["These credentals do not match our records"]
