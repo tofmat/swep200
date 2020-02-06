@@ -38,13 +38,14 @@ export default {
 
     methods: {
         registerUser() {
-            console.log(this.name, this.email, this.password)
             Axios.post('http://api-photobox.herokuapp.com/api/auth/signup', {
                 name: this.name,
                 email: this.email,
                 password: this.password
-            }).then(response => {
-                console.log(response) 
+            })
+            .then(response => {
+                localStorage.setItem('auth', JSON.stringify(response.config.data))
+                this.$root.auth = response.config.data;
             })
             .catch(({ response }) => {
                 console.log(response);
