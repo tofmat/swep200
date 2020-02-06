@@ -11,15 +11,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item"  v-if="!$root.auth">
+      <li class="nav-item">
         <router-link to="/login" class="nav-link">Login</router-link>
       </li>
-      <li class="nav-item" v-if="!$root.auth">
+      <li class="nav-item">
         <router-link to="/upload" class="nav-link">Upload Photo</router-link>
       </li>
-      <li class="nav-item dropdown" v-if="$root.auth">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hello {{$root.auth.name}}
+          Hello {{$root.auth}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -39,6 +39,12 @@
 export default {
    mounted() {
      console.log(this.$root);
+   },
+
+   computed: {
+     authUser() {
+       return this.$root.auth
+     }
    }
 }
 </script>

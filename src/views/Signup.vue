@@ -5,16 +5,28 @@
                 <div class="card-body">
                     <h3 class="text-center my-4">Sign Up</h3>
                     <div class="form-group">
-                        <input v-model="name" type="text" placeholder="Name " class="form-control">
+                        <input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors }" v-model="name" type="text" placeholder="Name " class="form-control">
+                        <div class="errors" v-if="errors">
+                            <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input v-model="email" type="text" placeholder="Email" class="form-control">
+                        <input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors && this.submitted }" v-model="email" type="text" placeholder="Email" class="form-control">
+                        <div class="errors" v-if="errors">
+                            <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input v-model="password" type="password" placeholder="Password" class="form-control">
+                        <input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors }" v-model="password" type="password" placeholder="Password" class="form-control">
+                        <div class="errors" v-if="errors">
+                            <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
+                        </div>
                     </div>
                     <div class="form-group text-center">
-                        <button @click="registerUser" class="btn form-control btn-success">Signup</button>
+                        <button @click="registerUser" :disabled="loading" class="btn form-control btn-success">
+                            <i class="fas fa-spin fa-spinner" v-if="loading"></i>
+                            {{ loading ? '' : 'Signup' }}
+                        </button>
                     </div>
                     <p class="text-center">Registered already? <span><router-link to="/login"> Login now </router-link></span></p>
 
@@ -27,23 +39,29 @@
 
 <script>
 import Axios from 'axios';
-export default {
+export default { 
     data() {
         return{
             name: '',
             email: '',
-            password: '' 
+            password: '',
+            errors: {},
+            submitted: false,
+            loading: false
         }
     },
 
     methods: {
         registerUser() {
+            this.loading = true;
             Axios.post('http://api-photobox.herokuapp.com/api/auth/signup', {
                 name: this.name,
                 email: this.email,
                 password: this.password
             })
             .then(response => {
+                this.loading = false;
+                this.submitted = true;
                 localStorage.setItem('auth', JSON.stringify(response.config.data))
                 this.$root.auth = response.config.data;
                 console.log(response);
@@ -51,7 +69,9 @@ export default {
                 this.$router.push('home');
             })
             .catch(({ response }) => {
-                console.log(response);
+                this.loading = false;
+                this.submitted = true;
+                this.errors = response.data;
             })
         }
     }
