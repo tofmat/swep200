@@ -9,17 +9,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <router-link to="/" class="nav-link">Home</router-link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" v-if="authUser.user">
+        <router-link to="/uploadphoto" class="nav-link">Upload</router-link>
+      </li>
+      <li class="nav-item" v-if="!authUser.user">
         <router-link to="/login" class="nav-link">Login</router-link>
       </li>
-      <li class="nav-item">
-        <router-link to="/upload" class="nav-link">Upload Photo</router-link>
-      </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" v-if="authUser.user">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hello {{$root.auth}}
+          Hello {{authUser.user.name}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -48,9 +48,12 @@ export default {
    },
    methods: {
      logout() {
-       localStorage.removeItem('auth');
+       localStorage.removeItem('auth')
+       localStorage.removeItem('access_token')
+
        this.$root.auth = {};
-       this.$noty.success('You are logged out ') 
+       this.$noty.success('You are logged out ')
+       this.$router.push('/login');
 
      } 
    }

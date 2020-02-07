@@ -5,6 +5,7 @@
  import Signup from './views/Signup.vue'
  import Upload from './views/Upload.vue'
  import Home from './views/Home.vue'
+ import UploadPhoto from './views/UploadPhoto.vue'
 
 Vue.use(Router)
 
@@ -25,7 +26,12 @@ const router = new Router({
     {
         path: '/',
         component: Home
-    }]
+    },
+    {
+        path: '/uploadphoto',
+        component: UploadPhoto
+    }
+    ]
 })
  
 export default router;

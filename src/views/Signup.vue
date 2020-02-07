@@ -6,14 +6,14 @@
                     <h3 class="text-center my-4">Sign Up</h3>
                     <div class="form-group">
                         <input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors }" v-model="name" type="text" placeholder="Name " class="form-control">
-                        <div class="errors" v-if="errors">
-                            <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
+                        <div class="errors" v-if="errors.name">
+                            <small class="text-danger" :key="error" v-for="error in errors.name">{{error}}</small>
                         </div>
                     </div>
                     <div class="form-group">
                         <input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors && this.submitted }" v-model="email" type="text" placeholder="Email" class="form-control">
-                        <div class="errors" v-if="errors">
-                            <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
+                        <div class="errors" v-if="errors.email">
+                            <small class="text-danger" :key="error" v-for="error in errors"> {{error}}</small>
                         </div>
                     </div>
                     <div class="form-group">
@@ -39,7 +39,16 @@
 
 <script>
 import Axios from 'axios';
+import config from '@/config';
 export default { 
+    beforeRouteEnter(to, from, next) {
+        if (localStorage.getItem("auth")){
+            return next({ path: "/"})
+        }
+
+        next();
+
+    },
     data() {
         return{
             name: '',
@@ -54,7 +63,7 @@ export default {
     methods: {
         registerUser() {
             this.loading = true;
-            Axios.post('http://api-photobox.herokuapp.com/api/auth/signup', {
+            Axios.post(`${config.apiUrl}/auth/sigup`, {
                 name: this.name,
                 email: this.email,
                 password: this.password
@@ -62,9 +71,9 @@ export default {
             .then(response => {
                 this.loading = false;
                 this.submitted = true;
-                localStorage.setItem('auth', JSON.stringify(response.config.data))
-                this.$root.auth = response.config.data;
-                console.log(response);
+                localStorage.setItem('auth', JSON.stringify(response.data))
+                localStorage.setItem('access_token',(response.data.access_token))
+                this.$root.auth = response.data;
                 this.$noty.success('You have successfully registered')
 
                 this.$router.push('/');

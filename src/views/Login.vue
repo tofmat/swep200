@@ -32,6 +32,7 @@
 
 <script>
 import Axios from 'axios'
+import config from '@/config';
 export default {
     beforeRouteEnter(to, from, next) {
         if (localStorage.getItem("auth")){
@@ -54,16 +55,19 @@ export default {
     methods: {
         loginUser() {
             this.loading = true ;
-            Axios.post('http://api-photobox.herokuapp.com/api/auth/login', {
+            Axios.post(`${config.apiUrl}/auth/login`, {
                 email: this.email ,
                 password: this.password
             })
             .then(response => {
                 this.loading = false;
                 this.$noty.success('You are logged in')
-                this.$root.auth = response.config.data;
-                localStorage.setItem('auth', JSON.stringify(response.config.data))
+                this.$root.auth = response.data;
+                localStorage.setItem('auth', JSON.stringify(response.data))
+                localStorage.setItem('access_token',(response.data.access_token))
+
                 this.$router.push('/');
+                console.log(response.dat)
             })
             .catch(({response}) => {
                 this.loading = false;
@@ -75,6 +79,8 @@ export default {
                     } else {
                          this.errors = response.data;
                     }
+                console.log(response)
+
             });
         }
     }

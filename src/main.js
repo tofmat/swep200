@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 const authData = localStorage.getItem("auth")
 
-new Vue({
+new Vue({ 
   router,
   
   data: {
