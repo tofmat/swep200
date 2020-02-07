@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Navbar />
-    <div class="container">
+    <div class="">
+      <Navbar />
       <router-view></router-view> 
     </div>  
   </div>
@@ -10,6 +10,7 @@
 <script>
 import Navbar from './components/Navbar'
 export default {
+
   name: 'app',
   components: {
     Navbar
@@ -25,6 +26,5 @@ export default {
   }
 
   body{
-    background-color: rgb(190, 241, 241); 
   }
 </style>
