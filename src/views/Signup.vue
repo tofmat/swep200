@@ -65,11 +65,13 @@ export default {
                 localStorage.setItem('auth', JSON.stringify(response.config.data))
                 this.$root.auth = response.config.data;
                 console.log(response);
+                this.$noty.success('You have successfully registered')
 
-                this.$router.push('home');
+                this.$router.push('/');
             })
             .catch(({ response }) => {
                 this.loading = false;
+                this.$noty.error('Something is wrong try again')
                 this.submitted = true;
                 this.errors = response.data;
             })

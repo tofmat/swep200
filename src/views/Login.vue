@@ -33,6 +33,15 @@
 <script>
 import Axios from 'axios'
 export default {
+    beforeRouteEnter(to, from, next) {
+        if (localStorage.getItem("auth")){
+            return next({ path: "/"})
+        }
+
+        next();
+
+    },
+
     data() {
         return{
             email: '',
@@ -54,7 +63,7 @@ export default {
                 this.$noty.success('You are logged in')
                 this.$root.auth = response.config.data;
                 localStorage.setItem('auth', JSON.stringify(response.config.data))
-                this.$router.push('home');
+                this.$router.push('/');
             })
             .catch(({response}) => {
                 this.loading = false;
