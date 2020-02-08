@@ -99,7 +99,6 @@ export default {
                 localStorage.setItem('access_token',(response.data.access_token))
                 this.$root.auth = response.data;
                 this.$noty.success('You have successfully registered')
-                console.log(response)
                 this.$router.push('/login');
             })
             .catch(({ response }) => {
@@ -107,7 +106,6 @@ export default {
                 this.$noty.error('Something is wrong try again')
                 this.submitted = true;
                 this.errors = response.data;
-                console.log(response)
 
             })
         }

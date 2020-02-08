@@ -104,7 +104,6 @@ export default {
                     } else {
                          this.errors = response.data;
                     }
-                console.log(response)
 
             });
         }

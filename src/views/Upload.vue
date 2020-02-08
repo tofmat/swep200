@@ -45,7 +45,6 @@ export default {
       if (this.$refs.pictureInput.file) {
         this.image = this.$refs.pictureInput.file;
       }
-      console.log(this.image);
     },
 
     uploadPhoto() {
@@ -55,20 +54,17 @@ export default {
       };
       const formData = new FormData();
       formData.append("image", this.image, this.image.name);
-      console.log(this.image.name);
       this.loading = true;
       Axios.post(`${config.apiUrl}/photos`, formData, {
         headers: headers
       })
         .then(response => {
           this.$noty.success("You have successfully Uploaded an image");
-          console.log(response.data);
           this.$router.push("/gallery");
         })
         .catch(({ response }) => {
           this.$noty.error("Something is wrong try again");
           this.errors = response;
-          console.log(response);
         });
     }
   }

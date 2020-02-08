@@ -39,7 +39,6 @@
 <script>
 export default {
    mounted() {
-     console.log(this.$root);
    },
 
    computed: {

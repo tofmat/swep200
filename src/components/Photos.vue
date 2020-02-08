@@ -27,7 +27,6 @@ export default {
   props: ["photos"],
 
   mounted() {
-    console.log(this.photos);
   },
   methods: {
     

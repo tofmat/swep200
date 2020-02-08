@@ -36,7 +36,6 @@ export default {
       Axios.get(`${config.apiUrl}/gallery`, {
         headers: headers
       }).then(response => {
-        console.log(response);
         this.photos = response.data.data.photos;
       });
     }

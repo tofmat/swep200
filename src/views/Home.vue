@@ -120,7 +120,6 @@ export default {
   components: {
   },
   mounted() {
-     console.log(this.$root);
    },
 
    computed: {
