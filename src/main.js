@@ -4,7 +4,9 @@ import router from './router'
 import VueNoty from 'vuejs-noty'
 import 'vuejs-noty/dist/vuejs-noty.css';
 import './assets/css/styles.css';
-import './assets/css/icons.css'
+import './assets/css/icons.css';
+import './assets/css/auth.css';
+
 
 Vue.use(VueNoty);
 

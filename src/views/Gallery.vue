@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div class="col-md-8"></div>
-    <h1 class="text-center my-5">Welcome to the home screen</h1>
     <Upload />
     <Photos v-bind:photos="photos" />
   </div>
@@ -11,7 +9,7 @@
 import Axios from "axios";
 import config from "@/config";
 import Photos from "@/components/Photos.vue";
-import Upload from "@/components/Upload.vue";
+import Upload from "@/components/Upload.vue"
 export default {
   mounted() {
     this.getPhotos();

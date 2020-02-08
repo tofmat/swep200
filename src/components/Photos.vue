@@ -1,22 +1,26 @@
 <template>
-  <div class="row">
-    <div class="card-deck">
-      <div class="col-md-4" v-for="photo in photos" :key="photo.id">
-        <div class="card">
-          <img
+<div class="container">
+
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Your Gallery</h1>
+
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-6" v-for="photo in photos" :key="photo.id">
+            <img
             v-bind:src="'http://api-photobox.herokuapp.com/file/'+photo.photo_path"
-            alt
-            class="card-img-top"
-          />
-          <div class="card-body">
-            <p class="card-text">
+             class="img-fluid img-thumbnail" alt="" />
+         <div class="card-body">
+            <p class="card-text text-center">
               <a href="#">Download</a> | <a href="#">Share</a>
             </p>
           </div>
-        </div>
-      </div>
     </div>
+    
   </div>
+</div>
+
 </template>
 
 <script>
