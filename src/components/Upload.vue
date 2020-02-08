@@ -10,25 +10,31 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Upload Picture</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="my-5">
+                    <div class="z-depth-1-half mb-4">
+      <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" class="img-fluid"
+        alt="example placeholder">
+    </div>
                     <div class="card-body">
                         <input type="file" @change="onChange">
-                        <button @click="uploadPhoto">Upload!</button>
+                        <button type="button" class="btn btn-primary" @click="uploadPhoto">Upload</button>
                     </div>
                     </div>
                 </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+
+
+
   </div>
 </div>
     

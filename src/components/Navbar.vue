@@ -1,18 +1,21 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <router-link to="/" class="navbar-brand">Navbar</router-link>
+            <router-link to="/" class="navbar-brand">PhotoBox</router-link>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="nazvbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         <router-link to="/" class="nav-link">Home</router-link>
       </li>
       <li class="nav-item" v-if="authUser.user">
         <router-link to="/uploadphoto" class="nav-link">Upload</router-link>
+      </li>
+      <li class="nav-item" v-if="authUser.user">
+        <router-link to="/gallery" class="nav-link">Photos</router-link>
       </li>
       <li class="nav-item" v-if="!authUser.user">
         <router-link to="/login" class="nav-link">Login</router-link>
@@ -22,8 +25,6 @@
           Hello {{authUser.user.name}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" @click="logout()" href="#">Logout</a>
         </div>

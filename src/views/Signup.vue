@@ -87,7 +87,7 @@ export default {
     methods: {
         registerUser() {
             this.loading = true;
-            Axios.post(`${config.apiUrl}/auth/sigup`, {
+            Axios.post(`${config.apiUrl}/auth/signup`, {
                 name: this.name,
                 email: this.email,
                 password: this.password

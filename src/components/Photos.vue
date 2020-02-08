@@ -8,19 +8,18 @@
   <div class="row text-center text-lg-left">
 
     <div class="col-lg-3 col-md-4 col-6" v-for="photo in photos" :key="photo.id">
-            <img
-            v-bind:src="'http://api-photobox.herokuapp.com/file/'+photo.photo_path"
+            <img v-bind:src="'http://api-photobox.herokuapp.com/file/'+photo.photo_path" width="400px"
+            height="300px"
              class="img-fluid img-thumbnail" alt="" />
          <div class="card-body">
             <p class="card-text text-center">
               <a href="#">Download</a> | <a href="#">Share</a>
             </p>
           </div>
-    </div>
-    
+      </div>
   </div>
+    
 </div>
-
 </template>
 
 <script>
