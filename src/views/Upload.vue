@@ -12,7 +12,15 @@
       button-class="btn"
       @change="onChange"
     ></picture-input>
-    <center><button type="button" class="btn btn-primary text-center my-5" @click="uploadPhoto">Upload</button></center>
+    <div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+                            <button @click="uploadPhoto()" :disabled="loading" class="login100-form-btn">
+                            <i class="fas fa-spin fa-spinner" v-if="loading"></i>
+                            {{ loading ? '' : 'UPLOAD' }}
+                        </button>
+						</div>
+					</div>
   </div>
 </div>
 </template>
@@ -41,6 +49,7 @@ export default {
     },
 
     uploadPhoto() {
+      this.loading=true;
       let headers = {
         Authorization: "Bearer " + localStorage.getItem("access_token")
       };
