@@ -13,7 +13,7 @@
              class="img-fluid img-thumbnail" alt="" />
          <div class="card-body">
             <p class="card-text text-center">
-              <a href="#">Download</a> | <a href="#">Share</a>
+              <button href="#">Download</button> | <button href="#">Share</button>
             </p>
           </div>
       </div>
@@ -29,7 +29,8 @@ export default {
   mounted() {
     console.log(this.photos);
   },
-
-  methods: {}
-};
+  methods: {
+    
+  }
+}
 </script>
