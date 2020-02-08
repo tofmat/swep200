@@ -7,7 +7,6 @@
  import Home from './views/Home.vue'
  import UploadPhoto from './views/UploadPhoto.vue'
  import Gallery from './views/Gallery.vue'
- import Upload2 from './views/Upload2.vue'
 
 Vue.use(Router)
 
@@ -22,10 +21,6 @@ const router = new Router({
         component: Signup
     },
     {
-        path: '/upload',
-        component: Upload
-    },
-    {
         path: '/',
         component: Home
     },
@@ -38,8 +33,8 @@ const router = new Router({
         component: Gallery
     },
     {
-        path: '/upload2',
-        component: Upload2
+        path: '/upload',
+        component: Upload
     }
     ]
 })

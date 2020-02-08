@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Upload />
+    <div class="my-3 mx-3">
+    <button type="button" class="" >
+    <router-link to="/upload"> Upload Image </router-link>
+    </button>
+  </div>
     <Photos v-bind:photos="photos" />
   </div>
 </template>
@@ -9,14 +13,12 @@
 import Axios from "axios";
 import config from "@/config";
 import Photos from "@/components/Photos.vue";
-import Upload from "@/components/Upload.vue"
 export default {
   mounted() {
     this.getPhotos();
   },
   components: {
     Photos,
-    Upload
   },
   headers: {
     Authorization: "Bearer " + localStorage.getItem("access_token")
@@ -41,3 +43,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .but{
+    background-color: black;
+  }
+</style>
