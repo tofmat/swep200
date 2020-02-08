@@ -8,10 +8,7 @@
       accept="image/jpeg,image/png" 
       size="10" 
       button-class="btn"
-      :custom-strings="{
-        upload: '<h1>Bummer!</h1>',
-        drag: 'Drag a 😺 GIF or GTFO'
-      }"
+      
       @change="onChange">
     </picture-input>
                         <button type="button" class="btn btn-primary" @click="uploadPhoto">Upload</button>
