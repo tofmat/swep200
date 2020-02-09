@@ -7,6 +7,7 @@
  import Home from './views/Home.vue'
  import UploadPhoto from './views/UploadPhoto.vue'
  import Gallery from './views/Gallery.vue'
+ import Photo from './views/Photo.vue'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ const router = new Router({
     {
         path: '/upload',
         component: Upload
+    },
+    {
+        path: '/photo/:id',
+        component: Photo
     }
     ]
 })

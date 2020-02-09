@@ -4,10 +4,12 @@
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
+          
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">PhotoBox. Your photos, Forever.</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+              
+              <router-link to="/signup" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</router-link>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -36,8 +38,7 @@
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
             <p>Try out our mobile app. A charade game for you and your company</p>
             <div class="badges">
-              <a class="badge-link" href="#"><img src="../assets/img/google-play-badge.svg" alt=""></a>
-              <a class="badge-link" href="#"><img src="../assets/img/app-store-badge.svg" alt=""></a>
+              <a class="badge-link" href="https://drive.google.com/open?id=1dsSmHemoRQxmSY7HuPqe_o1kNNjVPrg-"><img src="../assets/img/google-play-badge.svg" alt=""></a>
             </div>
           </div>
         </div>

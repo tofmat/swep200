@@ -2,12 +2,13 @@
   <div>
     <div class="my-3 mx-3">
     <button type="button" class="" >
-    <router-link to="/upload"> Upload Image </router-link>
+    <router-link to="/upload" class="btn btn-success btn-xl js-scroll-trigger"> Upload Image </router-link>
     </button>
   </div>
     <Photos v-bind:photos="photos" />
   </div>
 </template>
+
 
 <script>
 import Axios from "axios";
