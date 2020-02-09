@@ -1,10 +1,8 @@
 <template>
   <div>
     <div class="my-3 mx-3">
-    <button type="button" class="" >
-    <router-link to="/upload"> Upload Image </router-link>
-    </button>
-  </div>
+    
+    </div>
     <Photos v-bind:photos="photos" />
   </div>
 </template>
