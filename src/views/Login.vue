@@ -97,6 +97,7 @@ export default {
             .catch(({response}) => {
                 this.loading = false;
                 this.$noty.error('Oops something went wrong')
+                console.log(response)
                 if (response.status === 401){
                     this.errors = {
                         email: ["These credentals do not match our records"]
