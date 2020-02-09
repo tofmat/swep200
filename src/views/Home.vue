@@ -1,27 +1,72 @@
 <template>
-<div>
-  <!-- Navigation -->
-    <header class="masthead">
+  <div>
+    <!-- Navigation -->
+    <header class="spread">
       <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-7 my-auto">
+        <div class="row h-75">
+          <div class="col-md-6 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5">PhotoBox. Your photos, Forever.</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+              <h1 class="tagline">PhotoBox. Your photos, Forever.</h1>
+              <p style="font-size: 28px;line-height: 38px;"
+              >A simple, private and secure way to preserve your memories. Now and Forever.</p>
+              <a href="/signup" class="btn btn-primary btn-cta mt-4">
+                Start now
+                <span
+                  style="vertical-align: middle; margin-left: 15px;position: relative; top:-10%;"
+                >
+                  <svg
+                    height="11px"
+                    version="1.1"
+                    viewBox="0 0 6 11"
+                    width="6px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      id="Desktop-(AFR)"
+                      stroke="none"
+                      stroke-width="1"
+                    >
+                      <g
+                        id="Company"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        transform="translate(-1311.000000, -42.000000)"
+                      >
+                        <polyline id="Path-2-Copy" points="1312 43 1316 47.5 1312 52" />
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              </a>
             </div>
           </div>
-          <div class="col-lg-5 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait white">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="../assets/img/demo-screen-1.jpg" class="img-fluid" alt="">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
+          <div class="col-md-6 my-auto">
+            <div class="image-collage">
+              <div class="col-sm-10">
+                <div class="row">
+                  <figure class="col-sm-6 mt-auto">
+                    <img
+                      src="../assets/img/oau.jpg"
+                      alt="oau"
+                      class="image"
+                      style="max-width: 90%;"
+                    />
+                  </figure>
+                  <figure class="col-sm-6">
+                    <img src="../assets/img/conf.jpg" alt="conference center" class="image" />
+                  </figure>
                 </div>
+              </div>
+              <div class="row">
+                <figure class="col-sm-6">
+                  <img src="../assets/img/scape.jpg" alt="land scape" class="image" />
+                </figure>
+                <figure class="col-sm-6">
+                  <img src="../assets/img/scape.jpg" alt="city scape" class="image" data-v-4be09693 />
+                </figure>
               </div>
             </div>
           </div>
@@ -36,107 +81,42 @@
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
             <p>Try out our mobile app. A charade game for you and your company</p>
             <div class="badges">
-              <a class="badge-link" href="#"><img src="../assets/img/google-play-badge.svg" alt=""></a>
-              <a class="badge-link" href="#"><img src="../assets/img/app-store-badge.svg" alt=""></a>
+              <a class="badge-link" href="#">
+                <img src="../assets/img/google-play-badge.svg" alt />
+              </a>
+              <a class="badge-link" href="#">
+                <img src="../assets/img/app-store-badge.svg" alt />
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-heading text-center">
-          <h2>Unlimited Storage, Secured Gallery</h2>
-          <hr>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait white">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="../assets/img/demo-screen-1.jpg" class="img-fluid" alt="">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 my-auto">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-screen-smartphone text-primary"></i>
-                    <h3>Mobile Responsive</h3>
-\                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-camera text-primary"></i>
-                    <h3>Unlimited Storage</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-present text-primary"></i>
-                    <h3>Free to Use</h3>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-lock-open text-primary"></i>
-                    <h3>Open Source</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="cta-content">
-        <div class="container">
-          <h2>Stop waiting.<br>Start sharing.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-        </div>
-      </div>
-      <div class="overlay"></div>
-    </section>
-</div>
-
+  </div>
 </template>
 
 <script>
 export default {
-  components: {
+  components: {},
+  mounted() {},
+
+  computed: {
+    authUser() {
+      return this.$root.auth;
+    }
   },
-  mounted() {
-   },
+  methods: {
+    logout() {
+      localStorage.removeItem("auth");
+      localStorage.removeItem("access_token");
 
-   computed: {
-     authUser() {
-       return this.$root.auth
-     }
-   },
-   methods: {
-     logout() {
-       localStorage.removeItem('auth')
-       localStorage.removeItem('access_token')
-
-       this.$root.auth = {};
-       this.$noty.success('You are logged out ')
-       this.$router.push('/login');
-
-     } 
-   }
-}
+      this.$root.auth = {};
+      this.$noty.success("You are logged out ");
+      this.$router.push("/login");
+    }
+  }
+};
 </script>
+<style>
+@import "../assets/css/landing.css";
+</style>

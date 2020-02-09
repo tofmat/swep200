@@ -1,0 +1,37 @@
+.image-collage {
+    line-height: 1.15;
+-webkit-font-smoothing: antialiased;
+text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+font-size: 14px;
+font-family: 'Varela Round',sans-serif;
+font-weight: 400;
+color: #1d222c;
+box-sizing: inherit;
+-webkit-box-align: stretch;
+align-items: stretch;
+display: flex;
+flex-wrap: wrap;
+-webkit-box-pack: end;
+justify-content: flex-end;
+}
+.tagline {
+    font-family: 'Varela Round', Poppins;
+    font-weight: 700;
+    color: #202a3c;
+}
+.spread {
+    height: 100vh;
+    min-height: 775px;
+    background-color: #dadef5;
+}
+.image-collage .image {
+    max-width: 100%;
+    border-radius: 4px !important;
+}
+.btn-cta {
+    font-size: 14px;
+    padding: 18px;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 3px 0 #ccc;
+    background-color: #1867f8 !important;
+}
