@@ -13,7 +13,7 @@
              class="img-fluid img-thumbnail" alt="" style="border: none"/>
          <div class="card-body">
             <p class="card-text text-center">
-              <button href="#">Download</button> | <button href="#">Share</button>
+              <button href="">Download</button> | <button href="#">Share</button>
             </p>
           </div>
       </div>

@@ -81,12 +81,7 @@
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
             <p>Try out our mobile app. A charade game for you and your company</p>
             <div class="badges">
-              <a class="badge-link" href="#">
-                <img src="../assets/img/google-play-badge.svg" alt />
-              </a>
-              <a class="badge-link" href="#">
-                <img src="../assets/img/app-store-badge.svg" alt />
-              </a>
+              <a class="badge-link" href="https://drive.google.com/open?id=1dsSmHemoRQxmSY7HuPqe_o1kNNjVPrg-"><img src="../assets/img/google-play-badge.svg" alt=""></a>
             </div>
           </div>
         </div>

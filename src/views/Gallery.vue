@@ -7,6 +7,7 @@
   </div>
 </template>
 
+
 <script>
 import Axios from "axios";
 import config from "@/config";

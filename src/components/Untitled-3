@@ -29,6 +29,7 @@ export default {
     methods: {
         onChange(event) {
             this.image = event.target.files[0]
+            console.log(this.image)
         },
         uploadPhoto(){
             let headers = {
@@ -36,18 +37,20 @@ export default {
             }
             const formData = new FormData()
             formData.append('image', this.image, this.image.name)
+            console.log(this.image.name)
             this.loading = true;
             Axios.post(`${config.apiUrl}/photos`, formData, {
                 headers:headers
             })
             .then(response => {
                 this.$noty.success('You have successfully Uploaded an image')
-                console.log(response)
+                console.log(response.data)
                 // this.$router.push('/');
             })
             .catch(({ response }) => {
                 this.$noty.error('Something is wrong try again')
                 this.errors = response;
+                console.log(response)
             })
         }
     }
