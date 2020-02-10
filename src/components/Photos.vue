@@ -1,35 +1,33 @@
 <template>
-<div class="container">
+  <div class="container">
+    <h3 class="font-weight-light text-center text-lg-left mt-4 mb-0">Your Photos</h3>
 
-  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Your Gallery</h1>
+    <hr class="mt-2 mb-5" />
 
-  <hr class="mt-2 mb-5">
-
-  <div class="row text-center text-lg-left">
-
-    <div class="col-lg-3 col-md-4 col-6" v-for="photo in photos" :key="photo.id">
-            <img v-bind:src="photo.url" width="400px"
-            height="300px"
-             class="img-fluid img-thumbnail" alt="" style="border: none"/>
-         <div class="card-body">
-            <p class="card-text text-center">
-              <button href="">Download</button> | <button href="#">Share</button>
-            </p>
-          </div>
+    <div class="row text-center text-lg-left">
+      <div class="col-lg-4 col-md-4 col-6" v-for="photo in photos" :key="photo.id">
+        <img
+          v-bind:src="photo.url"
+          class="img-fluid rounded"
+          alt
+          style="height: 200px;width:300px;object-fit: cover;"
+        />
+        <div class="card-body">
+          <p class="card-text text-center">
+            <a v-bind:href=photo.url>Download</a> |
+            <a v-bind:href=photo.url>Share</a>
+          </p>
+        </div>
       </div>
+    </div>
   </div>
-    
-</div>
 </template>
 
 <script>
 export default {
   props: ["photos"],
 
-  mounted() {
-  },
-  methods: {
-    
-  }
-}
+  mounted() {},
+  methods: {}
+};
 </script>
