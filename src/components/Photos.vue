@@ -14,8 +14,8 @@
         />
         <div class="card-body">
           <p class="card-text text-center">
-            <a v-bind:href=photo.url>Download</a> |
-            <a v-bind:href=photo.url>Share</a>
+            <a v-bind:href="photo.url">Download</a> |
+            <a v-bind:href="prepareTweetUrl(photo.url)">Share</a>
           </p>
         </div>
       </div>
@@ -28,6 +28,10 @@ export default {
   props: ["photos"],
 
   mounted() {},
-  methods: {}
+  methods: {
+    prepareTweetUrl(photoUrl) {
+      return `https://twitter.com/intent/tweet?text=Checkout%20my%20photo%20on%20Photobox: ${photoUrl}`;
+    }
+  }
 };
 </script>
