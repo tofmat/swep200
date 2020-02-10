@@ -23,7 +23,7 @@
             <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item" v-if="authUser.user">
-            <router-link to="/uploadphoto" class="nav-link">Upload</router-link>
+            <router-link to="/upload" class="nav-link">Upload</router-link>
           </li>
           <li class="nav-item" v-if="authUser.user">
             <router-link to="/gallery" class="nav-link">Photos</router-link>
