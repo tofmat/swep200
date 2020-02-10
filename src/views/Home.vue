@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Navigation -->
-    <header class="spread">
+    <header class="spread masthead">
       <div class="container h-100">
         <div class="row h-75">
           <div class="col-md-6 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="tagline">PhotoBox. Your photos, Forever.</h1>
-              <p style="font-size: 28px;line-height: 38px;"
+              <h1 class="tagline" style="color: white;"> PhotoBox. Your photos, Forever.</h1>
+              <p style="font-size: 22px;line-height: 38px; color: white;"
               >A simple, private and secure way to preserve your memories. Now and Forever.</p>
               <a href="/signup" class="btn btn-primary btn-cta mt-4">
                 Start now
