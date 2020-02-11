@@ -8,7 +8,7 @@
 						Login
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
 						<input v-bind:class="{'is-invalid' : errors, 'is-valid' : !errors }" v-model="email" type="text" placeholder="Email" class="form-control">
                         <div class="errors" v-if="errors">
                             <small class="text-danger" :key="error" v-for="error in errors">{{error}}</small>
